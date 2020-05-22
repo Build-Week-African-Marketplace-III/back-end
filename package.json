@@ -4,6 +4,8 @@
   "description": "Back End of African Marketplace III",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +20,11 @@
   },
   "homepage": "https://github.com/Build-Week-African-Marketplace-III/back-end#readme",
   "devDependencies": {
-    "nodemon": "^2.0.4",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "helmet": "^3.22.0",
