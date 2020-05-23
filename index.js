@@ -1,3 +1,4 @@
+require('dotenv').config(); // add this line as the first thing to run1
 const express = require('express');
 var cookieParser = require('cookie-parser')
 const server = express();
