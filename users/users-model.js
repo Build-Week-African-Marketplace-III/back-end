@@ -10,8 +10,8 @@ async function add(user) {
 }
 
 async function addItem(item) {
-	const [id] = await db("items").insert(item)
-    return findItemById(id);
+	const data = await db("items").insert(item)
+	return data;
 }
 
 
