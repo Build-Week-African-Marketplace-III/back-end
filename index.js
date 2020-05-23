@@ -16,6 +16,21 @@ server.use('/api/', authRouter);
 server.use('/api/', authRouter);
 server.use('/api/', usersRouter);
 server.use('/api/', itemsRouter);
+
+server.get('/', (req, res) => {
+    res.json(`
+    Welcome sauti-africa's API !
+    Here are some useful endpoints:
+    https://sauti-africa.herokuapp.com/: to land in the app
+    https://sauti-africa.herokuapp.com/api/items: to retrieve items
+    https://sauti-africa.herokuapp.com/api/register: to register
+    https://sauti-africa.herokuapp.com/api/login: to login
+    https://sauti-africa.herokuapp.com/api/users: to retrieve users
+    `);
+})
+server.use((req, res) => {
+    res.status(404).json(`The end point: ${req.url} does not exist in our api`);
+})
  
 if (!module.parent) {
     server.listen(PORT, () => {
