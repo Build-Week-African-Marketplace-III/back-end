@@ -4,7 +4,7 @@
   "description": "Back End of African Marketplace III",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.s",
     "server": "nodemon index.js"
   },
   "repository": {
