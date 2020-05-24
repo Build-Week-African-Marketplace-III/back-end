@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 
 server.use(cookieParser())
-
+server.use(express.static(__dirname+"/public"));
 server.use(express.json());
 
 server.use('/api/', authRouter);
@@ -19,9 +19,9 @@ server.use('/api/', usersRouter);
 server.use('/api/', itemsRouter);
 
 server.get('/', (req, res) => {
-    res.send(`Welcome to Sauti-africa `);
+    // res.send(`Welcome to Sauti-africa `);
     // res.sendFile(path.join('./public/index.html'));
-    // res.sendFile(path.join(__dirname,'./public/index.html'));
+    res.sendFile(__dirname,+'./public/index.html');
 })
 server.use((req, res) => {
     res.status(404).json(`The end point: ${req.url} does not exist in our api`);
