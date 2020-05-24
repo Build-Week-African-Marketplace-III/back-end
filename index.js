@@ -18,7 +18,7 @@ server.use('/api/', usersRouter);
 server.use('/api/', itemsRouter);
 
 server.get('/', (req, res) => {
-    res.json(`
+    res.send(`
     Welcome sauti-africa's API !
     Here are the base url and their endpoints:
     https://sauti-africa.herokuapp.com/: to land in the app
@@ -32,10 +32,10 @@ server.use((req, res) => {
     res.status(404).json(`The end point: ${req.url} does not exist in our api`);
 })
  
-if (!module.parent) {
+// if (!module.parent) {
     server.listen(PORT, () => {
         console.log(`Listening on at: http://localhost:${PORT}/`);
     });
-}
+// }
 
 // I have to push this today
