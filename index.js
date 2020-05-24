@@ -21,7 +21,7 @@ server.use('/api/', itemsRouter);
 server.get('/', (req, res) => {
     // res.json(html);
     // res.sendFile(path.join('./public/index.html'));
-    res.sendFile('views/index.html', {root: public })
+    res.sendFile('public/index.html', {root: public })
 })
 server.use((req, res) => {
     res.status(404).json(`The end point: ${req.url} does not exist in our api`);
@@ -33,12 +33,4 @@ server.use((req, res) => {
     });
 // }
 
-// I have to push this today
-
-     // Welcome sauti-africa's API !
-    //Here are the base url and their endpoints:
-    // https://sauti-africa.herokuapp.com/: to land in the app
-    // https://sauti-africa.herokuapp.com/api/items: to retrieve items
-    // https://sauti-africa.herokuapp.com/api/register: to register
-    // https://sauti-africa.herokuapp.com/api/login: to login
-    // https://sauti-africa.herokuapp.com/api/users: to retrieve 
+ 
