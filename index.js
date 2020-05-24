@@ -20,7 +20,8 @@ server.use('/api/', itemsRouter);
 
 server.get('/', (req, res) => {
     // res.json(html);
-    res.sendFile(path.join('./public/index.html'));
+    // res.sendFile(path.join('./public/index.html'));
+    res.sendFile('views/index.html', {root: public })
 })
 server.use((req, res) => {
     res.status(404).json(`The end point: ${req.url} does not exist in our api`);
