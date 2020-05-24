@@ -23,12 +23,12 @@
   },
   "homepage": "https://github.com/Build-Week-African-Marketplace-III/back-end#readme",
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "jest": "^26.0.1",
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
