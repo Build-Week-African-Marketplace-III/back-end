@@ -19,7 +19,7 @@ server.use('/api/', usersRouter);
 server.use('/api/', itemsRouter);
 
 server.get('/', (req, res) => {
-    res.send(html);
+    res.json(html);
 })
 server.use((req, res) => {
     res.status(404).json(`The end point: ${req.url} does not exist in our api`);
