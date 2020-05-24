@@ -9,14 +9,14 @@
   },
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon -r dotenv/config index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Build-Week-African-Marketplace-III/back-end.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Thierno Diallo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Build-Week-African-Marketplace-III/back-end/issues"
@@ -33,6 +33,7 @@
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "fix": "0.0.6",
     "helmet": "^3.22.0",
     "ionic": "^5.4.16",
     "jsonwebtoken": "^8.5.1",

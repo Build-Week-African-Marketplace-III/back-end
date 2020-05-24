@@ -20,7 +20,7 @@ server.use('/api/', itemsRouter);
 server.get('/', (req, res) => {
     res.json(`
     Welcome sauti-africa's API !
-    Here are some useful endpoints:
+    Here are the base url and their endpoints:
     https://sauti-africa.herokuapp.com/: to land in the app
     https://sauti-africa.herokuapp.com/api/items: to retrieve items
     https://sauti-africa.herokuapp.com/api/register: to register
