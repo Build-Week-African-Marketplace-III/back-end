@@ -22,7 +22,7 @@ server.get('/', (req, res) => {
     // res.json(html);
     // res.sendFile(path.join('./public/index.html'));
     // res.sendFile('public/index.html', { root: public })
-    res.sendFile(path.join(__dirname, './index.html'));
+    res.sendFile(path.join(public, './index.html'));
 })
 server.use((req, res) => {
     res.status(404).json(`The end point: ${req.url} does not exist in our api`);
