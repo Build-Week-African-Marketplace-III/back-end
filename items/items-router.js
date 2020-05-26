@@ -3,7 +3,9 @@ const users = require("../users/users-model")
 const restrict = require("../middleware/restrict")
 const router = express.Router()
 
-// This endpoint is only available to logged-in users due to the `restrict` middleware
+// This endpoint is only available to logged-in
+//users due to the`restrict` middleware
+
 router.get("/items", restrict(), async (req, res, next) => {
     try {
         res.json(await users.findItems())
@@ -12,8 +14,7 @@ router.get("/items", restrict(), async (req, res, next) => {
     }
 })
 
-    
-    router.post('/items', async (req, res, next) => {
+ router.post('/items', async (req, res, next) => {
         //data validation
         const item = {
             name: req.body.name,
@@ -33,4 +34,4 @@ router.get("/items", restrict(), async (req, res, next) => {
         }
 })
 
-    module.exports = router
+module.exports = router
