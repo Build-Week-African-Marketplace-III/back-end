@@ -6,7 +6,7 @@ const router = express.Router()
 // This endpoint is only available to logged-in
 //users due to the`restrict` middleware
 
-router.get("/items", restrict(), async (req, res, next) => {
+router.get("/items", async (req, res, next) => {
     try {
         res.json(await users.findItems())
     } catch (err) {

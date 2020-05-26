@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken")
 function restrict(role = "regular") {
 	return async (req, res, next) => {
 		const authError = {
-			message: "Please login to be able to have item listings",
+			message: "Please login first !",
 		}
 
 		try {
