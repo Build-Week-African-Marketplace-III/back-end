@@ -1,5 +1,5 @@
 require('dotenv').config(); // add this line as the first thing to run1
-// const path = require('./public/index.html')
+// const path = require('./public/index.html'
 const express = require('express');
 var cookieParser = require('cookie-parser')
 const server = express();
@@ -7,12 +7,12 @@ const usersRouter = require("./users/users-router");
 const itemsRouter = require('./items/items-router');
 const authRouter = require('./auth/auth-router');
 const PORT = process.env.PORT || 5000;
-
+const cors = require('cors');
 
 server.use(cookieParser())
 server.use(express.static(__dirname+"/public"));
 server.use(express.json());
-
+server.use(cors)
 server.use('/api/', authRouter);
 server.use('/api/', authRouter);
 server.use('/api/', usersRouter);
