@@ -2,7 +2,7 @@
 const jwt = require("jsonwebtoken")
 
 
-function restrict(role = "regular") {
+function restrict(role = "admin") {
 	return async (req, res, next) => {
 		const authError = {
 			message: "Please login first !",

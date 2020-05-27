@@ -23,12 +23,12 @@ router.post("/register", async (req, res, next) => {
 
 router.post("/login", async (req, res, next) => {
   const authError = {
-    message: "Incorrect credentials !"
+    message: "Incorrect Credentials !"
   }
   try {
     const user = await db.findBy({ email: req.body.email }).first()
     if (!user) {
-      return res.status(401).json({ message: `user not found` })
+      return res.status(401).json({ message: `This user was not found in our database` })
     } else {
       const passwordValid = await bcrypt.compare(req.body.password, user.password)
       if (!passwordValid) {
@@ -38,8 +38,7 @@ router.post("/login", async (req, res, next) => {
         // this sends the token back as a cookie instead of in
         // the request body, so the client will automatically
         // save it in its cookie jar.
-        res.cookie("token", token);
-
+        res.cookie("token", token)
         res.json({
           message: `Welcome ${user.name}!`,
         })
@@ -53,7 +52,7 @@ router.post("/login", async (req, res, next) => {
 function generateToken(user) {
   const payload = {
     userId: user.id,
-    userRole: "regular",  // this would normally come from the database
+    userRole: "admin",  // this would normally come from the database
   }
   const tokenSecret = process.env.TOKEN_SECRET || "hk3g$gi%sh!0h*dh.^kdh";
   
