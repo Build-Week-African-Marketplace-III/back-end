@@ -28,10 +28,14 @@ function findItems() {
 
 function findBy(email) {
 	return db("users")
-		.select("id", "email", "password")
+		.select("id","name","email")
 		.where(email)
 }
-
+// function findBy(filter) {
+// 	return db("users")
+// 		.select("id", "username", "password")
+// 		.where(filter)
+// }
 
 function findById(id) {
 	return db("users")

@@ -11,7 +11,7 @@ router.post("/register", async (req, res, next) => {
 		const user = db.findBy({ email }).first()
 
 		if (user.email) {
-			return res.status(409).json({
+			return res.status(400).json({
 				message: "email is already taken",
 			})
 		}
@@ -42,7 +42,7 @@ router.post("/login", async (req, res, next) => {
     res.cookie("token", token);
 
 		res.json({
-			message: `Welcome ${user.email}!`,
+			message: `Welcome ${user.name}!`,
 		})
 	} catch(err) {
 		next(err)
