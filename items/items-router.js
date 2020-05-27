@@ -15,7 +15,7 @@ router.get("/items", async (req, res, next) => {
     }
 })
 
- router.post('/items', async (req, res, next) => {
+ router.post('/items', restrict(), async (req, res, next) => {
         //data validation
         const item = {
             name: req.body.name,
