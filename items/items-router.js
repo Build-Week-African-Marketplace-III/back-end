@@ -8,7 +8,8 @@ const router = express.Router()
 
 router.get("/items", async (req, res, next) => {
     try {
-        res.json(await users.findItems())
+        const data = await users.findItems();
+        res.status(200).json(data);
     } catch (err) {
         next(err)
     }
