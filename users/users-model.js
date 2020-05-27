@@ -16,7 +16,7 @@ async function addItem(item) {
 
 
 function find() {
-	return db("users").select("id", "name")
+	return db("users").select("id", "name","location")
 }
 
 
