@@ -28,8 +28,9 @@ function findItems() {
 
 function findBy(email) {
 	return db("users")
-		.select("id","name","email")
 		.where(email)
+		.select("id","name","email", "password")
+		
 }
 // function findBy(filter) {
 // 	return db("users")

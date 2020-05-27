@@ -23,27 +23,28 @@ router.post("/register", async (req, res, next) => {
 
 router.post("/login", async (req, res, next) => {
   const authError = {
-    message: "You shall not pass !"
+    message: "Incorrect credentials !"
   }
   try {
     const user = await db.findBy({ email: req.body.email }).first()
     if (!user) {
-      return res.status(401).json({message: `user not found`})
-    }
+      return res.status(401).json({ message: `user not found` })
+    } else {
+      const passwordValid = await bcrypt.compare(req.body.password, user.password)
+      if (!passwordValid) {
+        return res.status(401).json(authError)
+      } else {
+        const token = generateToken(user);
+        // this sends the token back as a cookie instead of in
+        // the request body, so the client will automatically
+        // save it in its cookie jar.
+        res.cookie("token", token);
 
-    const passwordValid = await bcrypt.compare(req.body.password, user.password)
-    if (!passwordValid) {
-      return res.status(401).json(authError)
+        res.json({
+          message: `Welcome ${user.name}!`,
+        })
+      }
     }
-    const token = generateToken(user);
-    // this sends the token back as a cookie instead of in
-    // the request body, so the client will automatically
-    // save it in its cookie jar.
-    res.cookie("token", token);
-
-		res.json({
-			message: `Welcome ${user.name}!`,
-		})
 	} catch(err) {
 		next(err)
 	}
