@@ -8,8 +8,14 @@
     "npm": "= 6.12.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon -r dotenv/config index.js"
+    "start:watch": "cross-env NODE_ENV=development nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "server": "nodemon -r dotenv/config index.js",
+    "test:watch": "cross-env NODE_ENV=testing jest --watch",
+    "test": "cross-env NODE_ENV=testing jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -23,6 +29,7 @@
   },
   "homepage": "https://github.com/Build-Week-African-Marketplace-III/back-end#readme",
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "jest": "^26.0.1",
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
