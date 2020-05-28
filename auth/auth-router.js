@@ -40,7 +40,7 @@ router.post("/login", async (req, res, next) => {
         // save it in its cookie jar.
         res.cookie("token", token)
         res.json({
-          message: `Welcome ${user.name}!`,
+          message: `Welcome ${user.name}! You are now logged in`,
         })
       }
     }

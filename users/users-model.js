@@ -19,7 +19,6 @@ function find() {
 	return db("users").select("id", "name","location")
 }
 
-
 function findItems() {
     return db("items")
     .select("id", "name", "description", "price", "location")
