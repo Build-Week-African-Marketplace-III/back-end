@@ -12,7 +12,7 @@ function restrict(role = "admin") {
             // this utilizes the `cookie-parser` middleware 
             // to pull the JWT out of the cookies that
 			//  were automatically sent by the client.
-			const token = req.headers.token
+			const token = req.headers.authorization;
  			if (!token) {
 				return res.status(401).json(authError)
 			}
